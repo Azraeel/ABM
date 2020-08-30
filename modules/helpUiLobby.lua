@@ -25,7 +25,7 @@ local settings = {
         "- This mod aims to improve balance while keeping the same feel of the game. Just play normally.",
         "- However some things have changed completely and may impact your style of gameplay massively:",
         "",
-        "1. Hydro Rush does not work anymore, The optimal 'Hydro Rush' is Factory, 2 Mexes, and then Hydro.",
+        "1. Hydro Rush does work still but, The optimal 'Hydro Rush' is Factory, 3 Mexes, and then Hydro.",
         "2. Energy upkeep on everything has been increased including shields, mexes, and etc.",
         "3. Mass storages provide less adjacency and t3 mexes have been reduced to 12 mass income, but this is without adjacency.",
         "4. T3 Air has been nerfed massively making T2 Air more usable.",       

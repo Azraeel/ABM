@@ -1,9 +1,9 @@
 ABM Changelog:
 
-T1 Mexes = 12 Energy Upkeep
+T1 Mexes = 8 Energy Upkeep
 T2 Mexes = 56 Energy Upkeep
 T3 Mexes = 136 Energy Upkeep and Income (Not Adjacented) to 12 Mass Income
---This has been changed to more energy more valuable throughout the game even into the late game. This also affects early game Hydro Rush Meta completely removing it. This also stops mex mass upgrading.--
+--This has been changed to more energy more valuable throughout the game even into the late game. This also stops mex mass upgrading.--
 
 T3 Pgens = 2500 to 2250 Energy Income, Adjancency Bonus to T3 Air Factory has been reduced, too increase the need for energy lategame. This also goes into the nerf of T3 Air as a whole
 T2 Shields and T3 Shields Energy Upkeep has been increased by around 60% to keep the trend with Energy Game mattering even in lategame.
