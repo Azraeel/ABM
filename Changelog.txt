@@ -1,0 +1,34 @@
+ABM Changelog:
+
+T1 Mexes = 12 Energy Upkeep
+T2 Mexes = 56 Energy Upkeep
+T3 Mexes = 136 Energy Upkeep and Income (Not Adjacented) to 12 Mass Income
+--This has been changed to more energy more valuable throughout the game even into the late game. This also affects early game Hydro Rush Meta completely removing it. This also stops mex mass upgrading.--
+
+T3 Pgens = 2500 to 2250 Energy Income, Adjancency Bonus to T3 Air Factory has been reduced, too increase the need for energy lategame. This also goes into the nerf of T3 Air as a whole
+T2 Shields and T3 Shields Energy Upkeep has been increased by around 60% to keep the trend with Energy Game mattering even in lategame.
+T2 PD has been nerfed by increasing the expense of them to make Units more worth it then PD.
+T2 Land HQ and T3 Land HQ have been reduced in cost to make the transition more smoother. Their Buildrates have also been increased. 
+T3 Quantum Gateways were made more expensive to discourage the spam of ras acus and etc. (In the future, I will make changes to Buildrates of Normal SACUs compared to Engineer Preset SACUs) 
+T1 Mass Storage Adjacency Bonuses have been halfed, to go along with the nerf to T3 Mexes
+T3 Mass Fabricator Adjacency has been fixed 
+T1 Energy Storage Adjacency Bonuses have been doubled to make ringing more valuable
+
+
+
+T3 Gunships reduced health from 6000 to 5500 
+T3 Gunships are more expensive by 10% - 15% amount and buildtime has been increased
+T3 ASF are more expensive by 20% and buildtime increased by 4%
+T3 Bombers are more expensive by 12% and buildtime increased
+
+
+
+All Factories buildrate have been increased to reduce the need for engineer spam.
+
+
+
+Reclaim has been halfed for any unit on a Seabed, Meaning Naval Combat is not won in any single battle and winning over the reclaim grounds isnt an autowin scenario. This allows gameplay to much more creative and free.
+Overspill has been fixed
+Fixed AutoRefueling for Aircraft
+Fixed Units being able to groundfire underwater units
+Fixed Stun

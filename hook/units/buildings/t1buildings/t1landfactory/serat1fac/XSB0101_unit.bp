@@ -1,0 +1,17 @@
+UnitBlueprint {
+Merge = true,
+BlueprintId = "xsb0101",
+
+    Defense = {
+        Health = 3625,
+        MaxHealth = 3625,
+    },
+    Economy = {
+        BuildCostEnergy = 1500,
+        BuildCostMass = 300,
+        BuildRate = 26.5,
+        BuildTime = 300,
+        StorageEnergy = 0,
+        StorageMass = 0,    --from 80
+    },
+}
