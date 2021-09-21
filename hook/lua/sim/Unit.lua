@@ -1,6 +1,6 @@
-local hideTable = import('/lua/sim/BuffDefinitions.lua').HideTable
-
 local oldUnit = Unit
+local ABMAbs = math.abs
+
 Unit = Class(oldUnit) {
 
 -----
@@ -11,7 +11,7 @@ Unit = Class(oldUnit) {
         if damageType == 'NormalAboveWater' and (self:GetCurrentLayer() == 'Sub' or self:GetCurrentLayer() == 'Seabed') then
             local bp = self:GetBlueprint()
             local myheight = bp.Physics.MeshExtentsY or bp.SizeY or 0
-            local depth = math.abs(vector[2]) - myheight
+            local depth = ABMAbs(vector[2]) - myheight
             if depth > 1 then return 
             else
                 oldUnit.OnDamage(self, instigator, amount, vector, damageType, unpack(arg))
@@ -20,55 +20,6 @@ Unit = Class(oldUnit) {
             oldUnit.OnDamage(self, instigator, amount, vector, damageType, unpack(arg))
         end
     end, 
-
----------------    
-----RECLAIM----
----------------
-
-    --Seabed Reclaim reduced to 50% instead of 100% to make navy battles not autowin
-        CreateWreckageProp = function(self, overkillRatio)
-        local bp = self:GetBlueprint()
-
-        local wreck = bp.Wreckage.Blueprint
-        if not wreck then
-            return nil
-        end
-
-        local mass = bp.Economy.BuildCostMass * (bp.Wreckage.MassMult or 0)
-        local energy = bp.Economy.BuildCostEnergy * (bp.Wreckage.EnergyMult or 0)
-        local time = (bp.Wreckage.ReclaimTimeMultiplier or 1)
-        local pos = self:GetPosition()
-        local layer = self:GetCurrentLayer()
-
-        
-        if layer == 'Water' or layer == 'Sub' or layer == 'Seabed' then 
-            mass = mass * 0.5
-            energy = energy * 0.5
-        end
-
-        local halfBuilt = self:GetFractionComplete() < 1
-
-        if not halfBuilt and (layer == 'Air' or EntityCategoryContains(categories.NAVAL - categories.STRUCTURE, self)) then
-            pos[2] = GetTerrainHeight(pos[1], pos[3]) + GetTerrainTypeOffset(pos[1], pos[3])
-        end
-
-        local overkillMultiplier = 1 - (overkillRatio or 1)
-        mass = mass * overkillMultiplier * self:GetFractionComplete()
-        energy = energy * overkillMultiplier * self:GetFractionComplete()
-        time = time * overkillMultiplier
-
-        local time  = time * 2
-
-        local prop = Wreckage.CreateWreckage(bp, pos, self:GetOrientation(), mass, energy, time)
-
-        if (layer ~= 'Air' and self.PlayDeathAnimation) or (layer == "Air" and halfBuilt) then
-            TryCopyPose(self, prop, true)
-        end
-
-        explosion.CreateWreckageEffects(self, prop)
-
-        return prop
-    end,
 
 --------
 -- BUFFS

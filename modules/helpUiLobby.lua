@@ -1,9 +1,9 @@
 --*****************************************************************************
---* Summary: Lobby and In game quick help for Equilibrium mod. Edited version of PhantomX lobby code, originally by Duck_42
+--* Summary: Lobby and In game quick help for Azraeel's Balance Mod. Edited version of PhantomX lobby code, originally by Duck_42
 --*
 --*
 --*
---* Authors: Duck_42 (2014), [e]Exotic_Retard (2018)
+--* Authors: Duck_42 (2014), [e]Exotic_Retard (2018), Azraeelian_Angel (2021)
 --*****************************************************************************
 local UIUtil = import('/lua/ui/uiutil.lua')
 local LayoutHelpers = import('/lua/maui/layouthelpers.lua')
@@ -25,13 +25,13 @@ local settings = {
         "- This mod aims to improve balance while keeping the same feel of the game. Just play normally.",
         "- However some things have changed completely and may impact your style of gameplay massively:",
         "",
-        "1. Hydro Rush does work still but, The optimal 'Hydro Rush' is Factory, 3 Mexes, and then Hydro.",
+        "1. Hydro Rush does work still however, the optimal 'Hydro Rush' is Factory, 3 Mexes, and then Hydro.",
         "2. Energy upkeep on everything has been increased including shields, mexes, and etc.",
         "3. Mass storages provide less adjacency and t3 mexes have been reduced to 12 mass income, but this is without adjacency.",
         "4. T3 Air has been nerfed massively making T2 Air more usable.",       
         "5. All Factories buildrate have been increased to reduce the need for engineer spam.",
         "6. Point Defense has been nerfed to make Unit vs PD lean more to Units",
-        "",
+        "7. Frigate Spam is much less impactful as cost has been increased by 50%,",
         "",
         "However, there is more to this mod than meets the eye, and you might notice lots of small changes,",
         "bug fixes, improvements and more.",

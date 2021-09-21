@@ -1,0 +1,32 @@
+ABM Changelog:
+
+T1 Mexes = 8 Energy Upkeep
+T2 Mexes = 56 Energy Upkeep
+T3 Mexes = 136 Energy Upkeep and Income (Not Adjacented) to 12 Mass Income
+--This has been changed to more energy more valuable throughout the game even into the late game. This also stops mex mass upgrading.--
+
+T3 Pgens = 2500 to 2250 Energy Income, Adjancency Bonus to T3 Air Factory has been reduced, too increase the need for energy lategame. This also goes into the nerf of T3 Air as a whole
+T2 Shields and T3 Shields Energy Upkeep has been increased by around 60% to keep the trend with Energy Game mattering even in lategame.
+T2 PD has been nerfed by increasing the expense of them to make Units more worth it then PD.
+T2 Land HQ and T3 Land HQ have been reduced in cost to make the transition more smoother. Their Buildrates have also been increased. 
+T1 Mass Storage Adjacency Bonuses have been halfed, to go along with the nerf to T3 Mexes
+T3 Mass Fabricator Adjacency has been fixed 
+T1 Energy Storage Adjacency Bonuses have been doubled to make ringing more valuable
+
+
+T3 UEF Strategic Bomber jamming added - UEF, Aeon cost increased by 10% For Energy - Cybran cost decreased by 5% for E and 300 Mass, however AoE Massively Nerfed as Well as DMG
+T3 Gunships reduced health from 6000 to 5500 
+T3 Gunships are more expensive by 10% - 15% amount and buildtime has been increased
+T3 ASF are more expensive by 20% and buildtime increased by 4%
+T3 Bombers are more expensive by 12% and buildtime increased
+T1 Frigates cost for Mass and Energy increased by 50%
+
+
+
+All Factories buildrate have been increased to reduce the need for engineer spam.
+
+Fixed Some Weird Overspilling affects from AOE
+Fixed Refueling on some aircraft
+Fixed Units being able to groundfire underwater units
+
+PLEASE CHECK ABM EVENFLOW ENGINEERS FOR FACTORY BP AND ENGINEERS AND COST REBALANCE

@@ -5,6 +5,7 @@
 --**  Copyright © 2008 Gas Powered Games, Inc.  All rights reserved.
 --****************************************************************************
 
+local ABMInsert = table.insert
 local AdjBuffFuncs = import('/lua/sim/AdjacencyBuffFunctions.lua')
 
 local newadj = {                -- SIZE4     SIZE8   SIZE12    SIZE16   SIZE20
@@ -49,7 +50,7 @@ for a, buffs in newadj do
             }
             --ABM: we add a SupressDup field which is caught by the metamethods
             --inside BuffBlueprint and removes the duplicate buff warning
-            table.insert(_G[a .. 'AdjacencyBuffs'], name)
+            ABMInsert(_G[a .. 'AdjacencyBuffs'], name)
         end
     end
 end

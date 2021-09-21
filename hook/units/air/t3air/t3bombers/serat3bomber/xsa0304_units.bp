@@ -201,8 +201,8 @@ UnitBlueprint {
         UniformScale = 0.08,
     },
     Economy = {
-        BuildCostEnergy = 115000,
-        BuildCostMass = 2600,
+        BuildCostEnergy = 121800,
+        BuildCostMass = 2700,
         BuildTime = 9000,
     },
     Footprint = {
@@ -299,8 +299,8 @@ UnitBlueprint {
             CollideFriendly = false,
             Damage = 3250,
             DamageFriendly = true,
-            DamageRadius = 5,
-	    ShieldDamage = 6500,
+            DamageRadius = 6.5,
+	        ShieldDamage = 3725,
             DamageType = 'Normal',
             Display = 'Zhanasee Strategic Bomb',
             DisplayName = 'Zhanasee Strategic Bomb',

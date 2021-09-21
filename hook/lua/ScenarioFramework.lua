@@ -1,9 +1,18 @@
 --removes the watervision effects of those that have expired.
 
+local ABMRemove = table.remove
+local ABMGetn = table.getn
+local ABMInsert = table.insert
+local ABMGetSize = table.getsize
+local ABMSort = table.sort
+local ABMWait = coroutine.yield
+
+local VDist2 = VDist2
+
 SeabedRevealingUnits = {}
 
 WaterVisionResetThread = function(self)
-    WaitTicks(15) 
+    ABMWait(15) 
 
     while true do
         local tick = GetGameTick() 
@@ -24,14 +33,14 @@ WaterVisionResetThread = function(self)
                         local bpValue = unit:GetBlueprint().Intel.WaterVisionRadius or 15
                         unit:SetIntelRadius('watervision', bpValue)
                     end
-                    table.remove(SeabedRevealingUnits, key) --remove units with expired timers from our table
+                    ABMRemove(SeabedRevealingUnits, key) --remove units with expired timers from our table
                 end
             else
-                table.remove(SeabedRevealingUnits, key) --remove dead units from our table
+                ABMRemove(SeabedRevealingUnits, key) --remove dead units from our table
             end
         end
         
-        WaitTicks(11) 
+        ABMWait(11) 
     end
 end
 
@@ -40,7 +49,7 @@ AutoRefuelingUnits = {}
 AutoRefuelingPlatforms = {}
 
 AirRefuelManagerThread = function()
-    WaitTicks(15) 
+    ABMWait(15) 
     
     while true do
         --we stuff a table for each army with air units that need refueling, then assign them in a nice orderly fashion.
@@ -49,23 +58,23 @@ AirRefuelManagerThread = function()
         local units = AutoRefuelingUnits
         for key, unit in units do
             if unit.AutoRefuel == true and not unit.Dead then
-                if (unit:GetFuelRatio() < 0.4 or unit:GetHealthPercent() < 0.6) and table.getsize(AutoRefuelingPlatforms) then
+                if (unit:GetFuelRatio() < 0.4 or unit:GetHealthPercent() < 0.6) and ABMGetSize(AutoRefuelingPlatforms) then
                     --ideally we would check the command queue to avoid refitting units that already have the command queued
                     --but that needs to go ui side to even run the command which seems pretty absurd
                     --really i just hate the sim side GetCommandQueue function - its so handicapped compared to the ui side one
                     local UnitCommandQ = unit:GetCommandQueue()
                     --we exclude units with multiple commands queued up since they have some job to do, this includes units ordered to refit.
-                    if table.getn(UnitCommandQ) <= 1 then
+                    if ABMGetn(UnitCommandQ) <= 1 then
                         --we need to check for the army every time instead of saving as a value since they can be given
                         local army = unit:GetArmy()
                         if not AirUnitsNeedServicing[army] then
                             AirUnitsNeedServicing[army] = {}
                         end
-                        table.insert(AirUnitsNeedServicing[army], unit)
+                        ABMInsert(AirUnitsNeedServicing[army], unit)
                     end
                 end
             else
-                table.remove(AutoRefuelingUnits, key) --remove dead/inactive units from our table
+                ABMRemove(AutoRefuelingUnits, key) --remove dead/inactive units from our table
             end
         end
         
@@ -85,7 +94,7 @@ AirRefuelManagerThread = function()
             end
         end
         
-        WaitTicks(30)
+        ABMWait(30)
     end
 end
 
@@ -112,7 +121,7 @@ AssignPlatforms = function(unitsTable, platsTable)
         end
         
         
-        if table.getsize(freePlatsForUnit) > 0 then
+        if ABMGetSize(freePlatsForUnit) > 0 then
             --sort the list of empty platforms by distance
             local closest = FilterPlatforms(unitPos, freePlatsForUnit)
             --assign unit to dock at nearest platform
@@ -160,7 +169,7 @@ FilterPlatforms = function(unitPos, platforms)
             platPos = plat:GetPosition()
             local dist = VDist2(unitPos[1], unitPos[3], platPos[1], platPos[3])
             if dist < 400 then
-                table.insert(platsInRange, plat)
+                ABMInsert(platsInRange, plat)
                 if dist < 15 then
                     return platsInRange[1], true --no need to bother sorting or continuing if the platforms so close, just use this one.
                 end
@@ -170,7 +179,7 @@ FilterPlatforms = function(unitPos, platforms)
         if not platsInRange[1] then
             return false, false
         elseif platsInRange[2] then
-            table.sort(platsInRange, function(a,b)--sort all our staging platforms by distance
+            ABMSort(platsInRange, function(a,b)--sort all our staging platforms by distance
                 local platPosA = a:GetPosition()
                 local platPosB = b:GetPosition()
                 local distA = VDist2(unitPos[1], unitPos[3], platPosA[1], platPosA[3])

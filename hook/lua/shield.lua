@@ -1,7 +1,5 @@
 local Entity = import('/lua/sim/Entity.lua').Entity
 local Overspill = import('/lua/overspill.lua')
-local EffectTemplate = import('/lua/EffectTemplates.lua')
-local Util = import('utilities.lua')
 
 -- Default values for a shield specification table (to be passed to native code)
 local DEFAULT_OPTIONS = {
