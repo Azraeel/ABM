@@ -1,4 +1,6 @@
 UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ues0103",    -- UEF t1 frigate
     AI = {
         TargetBones = {
             'Front_Turret',

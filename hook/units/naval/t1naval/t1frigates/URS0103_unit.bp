@@ -1,4 +1,6 @@
 UnitBlueprint {
+    Merge = true,
+    BlueprintId = "urs0103",    -- Cybran t1 frigate
     AI = {
         TargetBones = {
             'Front_Turret',

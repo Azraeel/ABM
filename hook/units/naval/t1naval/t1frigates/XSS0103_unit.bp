@@ -1,4 +1,6 @@
 UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xss0103",    -- Cybran t1 frigate
     Audio = {
         AmbientMove = Sound {
             Bank = 'XSS',
